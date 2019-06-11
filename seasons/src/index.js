@@ -28,18 +28,25 @@ export default class App extends React.Component {
     componentDidUpdate() {
         console.log('component re-render!!!')
     }
-    
-    render() {
-            if (this.state.errorMessage && !this.state.lat) {
+
+    renderContent = () => {
+        if (this.state.errorMessage && !this.state.lat) {
                 return <div>Error: {this.state.errorMessage}</div>
             }
 
-            if (!this.state.errorMessage && this.state.lat) {
+        if (!this.state.errorMessage && this.state.lat) {
                 return <SeasonDisplay latitude={this.state.lat} />
             }
 
             return <Loader />
-        
+    }
+    
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        )
     }
 }
 
