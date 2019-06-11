@@ -9,23 +9,46 @@ export default class App extends React.Component {
         super(props);
 
         this.state = {
-            lat: null
+            lat: null,
+            errorMessage: ''
         }
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({
+                    lat: position.coords.latitude
+                })
+            },
+            error => { 
+                this.setState({ 
+                    errorMessage: error.message
+                }) 
+                }
+        )
+    }
+
+    componentDidMount() {
+        console.log('My component is here')
+    }
+
+    componentDidUpdate() {
+        console.log('component re-render!!!')
     }
     
     render() {
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position),
-            (error) => console.log(error)
-        )
-        return (
-            <div>
-            Hello
-            <SeasonDisplay/>
-            </div>
-        )
+        
+            if (this.state.errorMessage && !this.state.lat) {
+                return <div>Error: {this.state.errorMessage}</div>
+            }
+
+            if (!this.state.errorMessage && this.state.lat) {
+                return <div>Latitude: {this.state.lat}</div>
+            }
+
+            return <div>Loading...</div>
+        
     }
 }
+
 
 
 
