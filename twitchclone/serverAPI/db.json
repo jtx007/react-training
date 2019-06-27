@@ -1,49 +1,10 @@
 {
   "streams": [
     {
-      "title": "james new stream",
-      "description": "wow much stream",
+      "title": "New Stream, New me",
+      "description": "FULL CRUD for the first time",
+      "userId": "105179868565863121935",
       "id": 1
-    },
-    {
-      "title": "YassuoNA",
-      "description": "NA's number 1 non pro player",
-      "id": 2
-    },
-    {
-      "title": "Maximillian Dood",
-      "description": "SO-cal gamer and fighting game and FF7 fanatic",
-      "id": 3
-    },
-    {
-      "title": "Stephen's new stream",
-      "description": "All things JavaScript stream!",
-      "userId": "105179868565863121935",
-      "id": 4
-    },
-    {
-      "title": "Unexepcted behavior",
-      "description": "Didn't expect that",
-      "userId": "105179868565863121935",
-      "id": 5
-    },
-    {
-      "title": "Expected behavior?",
-      "description": "Maybe I wanted this?",
-      "userId": "105179868565863121935",
-      "id": 6
-    },
-    {
-      "title": "Testing 1, 2, 3",
-      "description": "testing new history object",
-      "userId": "105179868565863121935",
-      "id": 7
-    },
-    {
-      "title": "stream test",
-      "description": "testing testing",
-      "userId": "105179868565863121935",
-      "id": 8
     }
   ]
 }
