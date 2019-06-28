@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 ../serverAPI/node_modules
+../rtmpServer/node_modules
 /.pnp
 .pnp.js
 
