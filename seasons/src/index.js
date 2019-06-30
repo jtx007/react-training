@@ -2,53 +2,27 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import SeasonDisplay from './SeasonDisplay'
 import Loader from './Loader'
+import useLocation from './useLocation'
 
 
-export default class App extends React.Component {
-    state = {
-        lat: null,
-        errorMessage: ''
-    }
+const App = () => {
 
-    componentDidMount() {
-        window.navigator.geolocation.getCurrentPosition(
-            position => {
-                this.setState({
-                    lat: position.coords.latitude
-                })
-            },
-            error => {
-                this.setState({
-                    errorMessage: error.message
-                })
-            }
-        )
-    }
+        const [lat, errorMessage] = useLocation()
 
-    componentDidUpdate() {
-        console.log('component re-render!!!')
-    }
-
-    renderContent = () => {
-        if (this.state.errorMessage && !this.state.lat) {
-                return <div>Error: {this.state.errorMessage}</div>
-            }
-
-        if (!this.state.errorMessage && this.state.lat) {
-                return <SeasonDisplay latitude={this.state.lat} />
-            }
-
-            return <Loader />
-    }
     
-    render() {
-        return (
-            <div className="border red">
-                {this.renderContent()}
-            </div>
-        )
-    }
+
+        let content;
+        if (errorMessage) {
+            content = <div>{errorMessage}</div>
+        } else if (lat) {
+            content = <SeasonDisplay lat={lat} />
+        } else {
+            return <Loader />
+        }
+        return <div className="border-red">{content}</div>
 }
+
+
 
 
 
