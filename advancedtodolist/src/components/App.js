@@ -4,7 +4,7 @@ import history from '../hisory'
 import List from './List'
 import NewTodo from './NewTodo'
 import Navbar from './Navbar'
-
+import ShowListItem from './ShowListItem'
 const App = () => {
 
 
@@ -15,6 +15,7 @@ const App = () => {
                 <Switch>
                     <Route path="/" exact component={List} />
                     <Route path="/new" exact component={NewTodo} />
+                    <Route path="/show/:id" exact component={ShowListItem} />
                 </Switch>
             </Router>
         </div>

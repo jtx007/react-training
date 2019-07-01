@@ -1,20 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { createTodo } from '../actions/index'
+import { connect } from 'react-redux'
 
-const NewTodo = () => {
+
+
+
+const NewTodo = (props) => {
+
+    const onSubmit = (event) => {
+        event.preventDefault()
+        props.createTodo(title, dueby, description)
+    }
+
+    const [title, createTitle] = useState('')
+    const [dueby, createDueDate] = useState('')
+    const [description, createDescription] = useState('')
+
     return (
         <div className="ui container segment">
-            <form className="ui form">
+            <form onSubmit={onSubmit} className="ui form">
                 <div className="field">
                     <label>Title:</label>
-                    <input type="text" />
+                    <input onChange={(e) => createTitle(e.target.value)} 
+                    type="text" 
+                    value={title} 
+                    />
                 </div>
                 <div className="field">
                     <label>Due By:</label>
-                    <input type="text" />
+                    <input onChange={(e) => createDueDate(e.target.value)}
+                    type="text" 
+                    value={dueby}
+                    />
                 </div>
                 <div className="field">
                     <label>Description:</label>
-                    <textarea  />
+                    <textarea onChange={(e) => createDescription(e.target.value)}
+                    type="text"
+                    value={description} />
                 </div>
                 <button type="submit" className="ui button">
                     Submit
@@ -26,4 +49,4 @@ const NewTodo = () => {
 }
 
 
-export default NewTodo
+export default connect(null, { createTodo })(NewTodo)

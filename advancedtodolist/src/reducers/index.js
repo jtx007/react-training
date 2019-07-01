@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
+import todosReducers from './todosReducer'
 
 export default combineReducers({
-    todos: () => 'working for now'
+    todos: todosReducers
 })

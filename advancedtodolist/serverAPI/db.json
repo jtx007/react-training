@@ -1,5 +1,28 @@
 {
-    "todos": [
-
-    ]
+  "todos": [
+    {
+      "title": "Testing todos",
+      "duedate": "Today",
+      "description": "Test number who knows now?",
+      "id": 1
+    },
+    {
+      "title": "Hello",
+      "duedate": "Test",
+      "description": "tesr",
+      "id": 2
+    },
+    {
+      "title": "hello",
+      "duedate": "helloe",
+      "description": "w342423e424e23",
+      "id": 3
+    },
+    {
+      "title": "erwrwrwrwr",
+      "duedate": "rwerwerwre",
+      "description": "ewrwrwrwerwer\n\n",
+      "id": 4
+    }
+  ]
 }
